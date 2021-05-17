@@ -1,0 +1,5 @@
+- [LeetCode Problems' Solutions](https://github.com/haoel/leetcode):C++
+- [LeetCode Answer](https://github.com/turingplanet/leetcode-answers):JAVA
+- [Fucking Algorithm](https://github.com/labuladong/fucking-algorithm)
+- [LeetCode Animation](https://github.com/MisterBooo/LeetCodeAnimation):Demonstrate all the questions on LeetCode in the form of animation.
+- [Java Alogrithms](https://github.com/happygirlzt/JavaAlgorithms)
