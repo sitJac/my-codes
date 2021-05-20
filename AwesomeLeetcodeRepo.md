@@ -3,3 +3,4 @@
 - [Fucking Algorithm](https://github.com/labuladong/fucking-algorithm)
 - [LeetCode Animation](https://github.com/MisterBooo/LeetCodeAnimation):Demonstrate all the questions on LeetCode in the form of animation.
 - [Java Alogrithms](https://github.com/happygirlzt/JavaAlgorithms)
+- [C++ data structure and algorithm tutorial](https://www.youtube.com/playlist?list=PLkNxDxyJqb-xD5EbDuIYC35Adq5f_w9CR)
