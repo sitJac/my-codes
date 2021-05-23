@@ -55,7 +55,7 @@ class Solution {
     } else {
         return nums[count / 2];
     }
-}
+    }
 }
 // @lc code=end
 
