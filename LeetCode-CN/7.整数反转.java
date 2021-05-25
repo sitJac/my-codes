@@ -15,5 +15,6 @@ class Solution {
         return (int)n==n? (int)n:0;
     }
 }
+
 // @lc code=end
 
