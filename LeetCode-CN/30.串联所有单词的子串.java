@@ -5,7 +5,7 @@
  */
 
 // @lc code=start
-class Solution {
+class Solution { 
     public List<Integer> findSubstring(String s, String[] words) {
         
         List<Integer> res = new ArrayList<Integer>();
