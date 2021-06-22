@@ -1,3 +1,16 @@
+Array, Binary Search, Linked List
+Stack, Queue
+HashMap, Heap
+Graph, Tree
+Searching, Dynamic Programming
+Greedy, Maths
+Advanced topics (Union Find, Topological Sort, Trie, …)    
+
+
+
+
+
+
 - 1.刷题误区和刷题方法论
 - 2.双指针Two Pointers
 - 3.二分查找Binary Search套路	
