@@ -7,15 +7,5 @@
 -->
  
 
-## Methodology
-- [one](https://www.cxyxiaowu.com/10830.html)
-
-## Mode
- - Array, Binary Search, Linked List
- - Stack, Queue
- - HashMap, Heap
- - Graph, Tree
- - Searching, Dynamic Programming
- - Greedy, Maths
- - Advanced topics (Union Find, Topological Sort, Trie, …)
+ Created by sitJac 😀
 
