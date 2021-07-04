@@ -268,7 +268,8 @@ int main()
     int n,i,a[10],T;  
     scanf(“%d”,&T);
     while(T--)
-    {                                                    scanf("%d",&n);                          
+    {
+        scanf("%d",&n);                          
         for(i=0;i<n;i++)
             scanf("%d",&a[i]);
         for(i=0;i<n;i++)
