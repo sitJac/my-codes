@@ -154,3 +154,77 @@ c = a⊕b //如果a、b两个值不相同，则异或结果为1。如果a、b两
 在判断数值是否相同时，可以通过异或运算快速判断
 
 <https://blog.csdn.net/huwei039/article/details/104269486>
+
+
+## 10.数组
+```C++
+vector <int> a;
+vector <int> b(10); //b默认长度为10
+vector <int> c(10, 2); //c用2进行初始化
+a.size();
+a.push_back(2);
+a.back(); //返回vector最后一个值
+a.pop_back(); //删除最后一个值
+sort(a.begin(), a.end());
+for(vector<int>:: iterator it = a.begin(); it != a.end(); it++){
+   cout<<*it;
+}
+vector.erase(it); //返回删除元素的下一个元素的迭代器
+vector.insert(it, 2); //在迭代器指定的位置之前插入2，并返回表示新插入元素的迭代器
+*max_element(myVector.begin(), myVector.end()); //利用迭代器返回最大值
+```
+
+## 10.栈
+```C++
+stack <int> a;
+a.push(2);
+a.top(); //返回栈顶元素
+a.pop();
+a.empty(); //如果栈为空，则返回true
+a.size();
+```
+
+## 11.队列
+```
+queue <int> a;
+a.push(1);
+a.front();
+a.back(); 
+a.pop();
+```
+
+## 12.字符串
+```
+string a; //默认""
+a += 'd'; 
+a += "ansjcknkj";
+a.back(); //返回最后一个字符
+string b = a.substr(1,5); //从位置1向后截取5个字符的子字符串
+a.pop_back(); //去掉最后一个字符
+string c = to_string(1); //整数to string
+c = to_string(1.98); //float to string
+int d = stoi("890"); //string to int
+```
+
+## 13.堆
+```
+heap（堆）C++默认实现优先队列就是用的堆，所以用优先队列会比较方便
+
+priority_queue <int> a; //最大堆
+priority_queue <int, vector<int>, greater<int> > b; //最小堆，节点值不大于两边子节点
+a.push(1);
+a.pop();
+a.top(); //返回堆顶元素
+```
+
+## 14.映射表
+```
+map <int, bool> a;
+a[0] = true;
+cout<<a[0]<<a[1]; //会输出true和false。如果映射表中不存在key值对应的元素，会根据默认构造函数赋值。
+a[2]++; //a[2] = 1 
+map <int, bool>:: iterator it = a.find(12); //没找到会返回a.end()
+for(map<int, string>::iterator it = myMap.begin(); it != myMap.end(); it++){
+  cout<<it->first<<it->second;
+} //遍历映射表
+```
