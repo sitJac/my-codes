@@ -606,4 +606,3 @@ select
 from student s
 where month(date_sub(s.sage,interval 1 month)) = month(curdate())
 ```
-
