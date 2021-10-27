@@ -34,10 +34,20 @@ void build_heap(int tree[], int n){
     }
 }
 
+void heapsort(int tree[], int n){
+    build_heap(tree, n);
+    int i;
+    for(i = n - 1; i >= 0; i--){
+        swap(tree, i, 0);
+        heapify(tree, i, 0);
+    }
+}
+
 int main(){
     int tree[] = {2, 5, 3, 1, 10, 4};
     int n = 6;
-    build_heap(tree, n);
+    //build_heap(tree, n);
+    heapsort(tree, n);
 
     int i;
     for (i = 0; i < n; i++){
