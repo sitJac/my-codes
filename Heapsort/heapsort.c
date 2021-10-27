@@ -25,10 +25,19 @@ void heapify(int tree[], int n, int i){
     }
 }
 
+void build_heap(int tree[], int n){
+    int last = n - 1;
+    int parent = (last - 1) / 2;
+    int i;
+    for(i = parent; i >= 0; i--){
+        heapify(tree, n, i);
+    }
+}
+
 int main(){
-    int tree[] = {4,10,3,5,1,2};
+    int tree[] = {2, 5, 3, 1, 10, 4};
     int n = 6;
-    heapify(tree, n, 0);
+    build_heap(tree, n);
 
     int i;
     for (i = 0; i < n; i++){
