@@ -11,7 +11,6 @@ int getGcd(int a, int b)
     {
         return getGcd(b, a % b);
     }
-    
 }
 
 int main()
@@ -26,4 +25,5 @@ int main()
     return 0;
 }
 
-///gcd(a, b) = gcd(b, a % b)    辗转相除法
+//gcd(a, b) = gcd(b, a % b)    辗转相除法
+//若c是a, b的最大公约数,则a * b / c是a和b的最小公倍数
