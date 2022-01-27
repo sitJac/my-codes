@@ -12,9 +12,21 @@ typedef struct BTNode
 int N;
 int preorder[maxSize];
 
-void insert1(BTNode * &x, int a)
+void insert1(BTNode* &x, int a)
 {
-    
+    if (x == NULL)
+    {
+        x = new BTNode();
+        x->data = a;
+        x->lChild = x->rChild = NULL;
+    }
+    else
+    {
+        if (a < x->data)
+            insert1(x->lChild, a);
+        else
+            insert1(x->rChild, a);
+    }
 }
 
 
