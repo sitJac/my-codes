@@ -57,7 +57,5 @@ int main(){
     {
         cout << prefix[i] << " ";
     }
-    
-    
     return 0;
-}
+}it 
