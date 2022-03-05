@@ -40,14 +40,12 @@ int main(){
 
     prefix_table(pattern, prefix, n);
 
-    //cout << "TEXT:";
     for(int i = 0; i < n; i++)
     {
         cout << pattern[i] << " ";
     }
     cout << endl;
 
-    //cout << "Prefix:";
     for (int i = 0; i < n; i++)
     {
         cout << prefix[i] << " ";
