@@ -10,3 +10,6 @@ int main(){
     cout << b_ << endl;
     return 0;
 }
+// output:
+// 0x61fe0c
+// 0x61fe08
