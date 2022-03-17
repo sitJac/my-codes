@@ -1,73 +1,128 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
+#include <climits>
+
 using namespace std;
 
-struct list {
-	int gold, all, number;  //金牌数，奖牌数和人口数
-	int l1, l2, l3, l4;     //对应四种排名方式
-	int order;              //原来的输入顺序，方便在排序完后回归原来的顺序
+const int MAXN = 200 + 10;
+const double INF = INT_MAX;
+
+struct Country {
+    int id;
+    double gold, medal, goldRate, medalRate;
+    int bestMethod;
+    int bestOrder;
+    int order[4];
+    Country() {}
+    Country(int id, int gold, int medal, int people) {
+        bestMethod = MAXN;
+        bestOrder = MAXN;
+        this->id = id;
+        this->gold = gold;                      //金牌总数
+        this->medal = medal;                    //奖牌总数
+        if (people == 0 && gold != 0) {         //金牌比例
+            goldRate = INF;
+        } else {
+            goldRate = gold / (double)people;
+        }
+        if (people == 0 && medal != 0) {        //奖牌比例
+            medalRate = INF;
+        } else {
+            medalRate = medal / (double)people;
+        }
+    }
 };
 
-//四种排名方式sort函数所对应要用的compare函数
-bool compare1(list x, list y) {
-	return x.gold > y.gold;
+Country arr[MAXN];
+
+bool CompareID(Country c1, Country c2){
+    return c1.id < c2.id;
 }
-bool compare2(list x, list y) {
-	return x.all > y.all;
+
+bool CompareGold(Country c1, Country c2){
+    return c1.gold > c2.gold;
 }
-bool compare3(list x, list y) {
-	return 1.0*x.gold / x.number > 1.0*y.gold / y.number;
+
+bool CompareMedal(Country c1, Country c2){
+    return c1.medal > c2.medal;
 }
-bool compare4(list x, list y) {
-	return 1.0*x.all / x.number > 1.0*y.all / y.number;
+
+bool CompareGoldRate(Country c1, Country c2){
+    return c1.goldRate > c2.goldRate;
 }
-//回归原来输入顺序的函数
-bool compare5(list x, list y) {
-	return x.order < y.order;
+
+bool CompareMedalRate(Country c1, Country c2){
+    return c1.medalRate > c2.medalRate;
+}
+
+void Solve(int n) {
+    sort(arr, arr + n, CompareGold);
+    for (int i = 0; i < n; ++i) {
+        arr[i].order[0] = i + 1;
+    }
+    for (int i = 1; i < n; ++i) {
+        if (arr[i].gold == arr[i - 1].gold) {
+            arr[i].order[0] = arr[i - 1].order[0];
+        }
+    }
+
+    sort(arr, arr + n, CompareMedal);
+    for (int i = 0; i < n; ++i) {
+        arr[i].order[1] = i + 1;
+    }
+    for (int i = 1; i < n; ++i) {
+        if (arr[i].medal == arr[i - 1].medal) {
+            arr[i].order[1] = arr[i - 1].order[1];
+        }
+    }
+
+    sort(arr, arr + n, CompareGoldRate);
+    for (int i = 0; i < n; ++i) {
+        arr[i].order[2] = i + 1;
+    }
+    for (int i = 1; i < n; ++i) {
+        if (arr[i].goldRate == arr[i - 1].goldRate) {
+            arr[i].order[2] = arr[i - 1].order[2];
+        }
+    }
+
+    sort(arr, arr + n, CompareMedalRate);
+    for (int i = 0; i < n; ++i) {
+        arr[i].order[3] = i + 1;
+    }
+    for (int i = 1; i < n; ++i) {
+        if (arr[i].medalRate == arr[i - 1].medalRate) {
+            arr[i].order[3] = arr[i - 1].order[3];
+        }
+    }
+
+    sort(arr, arr + n, CompareID);
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < 4; ++j) {
+            if (arr[i].bestOrder > arr[i].order[j]) {
+                arr[i].bestOrder = arr[i].order[j] ;
+                arr[i].bestMethod = j + 1;
+            }
+        }
+    }
 }
 
 int main() {
-	int n;
-	int m;
-	cin >> n >> m;  //n是国家数，m是排名的国家数
-	list* arr = (list*)malloc(sizeof(list) * n);
-	int* country = (int*)malloc(sizeof(int) * m);
-	for (int i = 0; i < n; i++) {
-		cin >> arr[i].gold >> arr[i].all >> arr[i].number;
-		arr[i].order = i;
-	}
-	for (int i = 0; i < m; i++)cin >> country[i];
-	sort(arr, arr + n, compare1);//对金牌数进行排序
-	arr[0].l1 = 1;
-	for (int i = 1; i < n; i++) {
-		if (arr[i].gold == arr[i - 1].gold)arr[i].l1 = arr[i - 1].l1;
-		else arr[i].l1 = i + 1;
-	}//排名记录在l1中
-	sort(arr, arr + n, compare2);//对奖牌数进行排序
-	arr[0].l2 = 1;
-	for (int i = 1; i < n; i++) {
-		if (arr[i].all == arr[i - 1].all)arr[i].l2 = arr[i - 1].l2;
-		else arr[i].l2 = i + 1;
-	}//排名记录在l2中
-	sort(arr, arr + n, compare3); arr[0].l3 = 1;//对金牌人口比例进行排序
-	for (int i = 1; i < n; i++) {
-		if (1.0*arr[i].gold / arr[i].number == 1.0*arr[i - 1].gold / arr[i - 1].number)arr[i].l3 = arr[i - 1].l3;
-		else arr[i].l3 = i + 1;
-	}//排名记录在l3中
-	sort(arr, arr + n, compare4);//对奖牌人口比例进行排序
-	arr[0].l4 = 1;
-	for (int i = 1; i < n; i++) {
-		if (1.0*arr[i].all / arr[i].number == 1.0*arr[i - 1].all / arr[i - 1].number)arr[i].l4 = arr[i - 1].l4;
-		else arr[i].l4 = i + 1;
-	}//排名记录在l4中
-	sort(arr, arr + n, compare5);//回归原来的排序顺序
-	for (int i = 0; i < m; i++) {
-		if (arr[country[i]].l1 <= arr[country[i]].l2 && arr[country[i]].l1 <= arr[country[i]].l3 && arr[country[i]].l1 <= arr[country[i]].l4)
-			cout << arr[country[i]].l1 << ':' << 1 << endl;
-		else if (arr[country[i]].l2 <= arr[country[i]].l1 && arr[country[i]].l2 <= arr[country[i]].l3 && arr[country[i]].l2 <= arr[country[i]].l4)
-			cout << arr[country[i]].l2 << ':' << 2 << endl;
-		else if (arr[country[i]].l3 <= arr[country[i]].l1 && arr[country[i]].l3 <= arr[country[i]].l2 && arr[country[i]].l3 <= arr[country[i]].l4)
-			cout << arr[country[i]].l3 << ':' << 3 << endl;
-		else cout << arr[country[i]].l4 << ':' << 4 << endl;
-	}//对需要排序的国家，输出四种排名方式中最小的一个
-	return 0;
+    int n, m;
+    while (scanf("%d%d", &n, &m) != EOF) {
+        for (int i = 0; i < n; ++i) {
+            int gold, medal, people;
+            scanf("%d%d%d", &gold, &medal, &people);
+            arr[i] = Country(i, gold, medal, people);
+        }
+        Solve(n);
+        for (int i = 0; i < m; ++i) {
+            int index;
+            scanf("%d", &index);
+            printf("%d:%d\n", arr[index].bestOrder, arr[index].bestMethod);
+        }
+        printf("\n");
+    }
+    return 0;
 }
