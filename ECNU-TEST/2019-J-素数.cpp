@@ -1,14 +1,18 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int Value(int x)
+int Value(int num)  //价值=质因数的个数
 {
-    int cnt = 0;
-    while(x != 0)
+    set<int> s;
+    for(int i = 1; i <= num; i ++)
     {
-        
+        if(num % i == 0)
+        {
+            s.insert(i);
+        }
     }
-
+    int res = s.size();
+    return res;
 }
 
 int main()
@@ -20,5 +24,6 @@ int main()
     {
         value += Value(i);
     }
+    cout << value;
     return 0;
 }
