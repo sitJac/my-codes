@@ -17,11 +17,13 @@ int main(){
         sort(s.begin(), s.end());
         do{
             cout << s << endl;
-        }while(next_permutation(s.begin(, s.end())));
+        }while(next_permutation(s.begin(), s.end()));
         cout << endl;
     }
 
     //对数组类型
+    int n;
+    cin >> n;
     int a[n];
     for(int i = 0; i < n; ++i)
         cin >> a[i];
