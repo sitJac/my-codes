@@ -7,27 +7,25 @@
 // @lc code=start
 class Solution {
 public:
-    bool isPalindrome(string s) {
-        string rev = s;
-        reverse(rev.begin(), rev.end());
-        if(rev == s) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
     string longestPalindrome(string s) {
         int n = s.size();
-        string res;
+        auto getLen = [&](int l, int r) {
+            while(l >= 0 && r < n && s[l] == s[r]) {
+                l--;
+                r++;
+            }
+            return r-1-l;
+        };
+        int len = 0;
+        int start = 0;
         for(int i = 0; i < n; i++) {
-            for(int j = i; j < n; j++) {
-                if(isPalindrome(s.substr(i, j+1)) && j+1-i > res.size()) {
-                    res = s.substr(i, j+1);
-                }
+            int cur = max(getLen(i, i), getLen(i, i+1));
+            if(cur > len) {
+                len = cur;
+                start = i - (len - 1) / 2;
             }
         }
-        return res;
+        return s.substr(start, len);
     }
 };
 // @lc code=end
