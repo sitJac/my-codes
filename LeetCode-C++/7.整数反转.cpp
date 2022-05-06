@@ -8,16 +8,16 @@
 class Solution {
 public:
     int reverse(int x) {
-        int rev = 0;
-        while (x != 0) {
-            if (rev < INT_MIN / 10 || rev > INT_MAX / 10) {
-                return 0;
+        string s = to_string(x);
+        std::reverse(s.begin(), s.end());
+        int ans = 0;
+        try {
+            ans = stoi(s);
+            if(x < 0) {
+                ans = -ans;
             }
-            int digit = x % 10;
-            x /= 10;
-            rev = rev * 10 + digit;
-        }
-        return rev;
+        }catch(exception ex){}
+        return ans;
     }
 };
 // @lc code=end
