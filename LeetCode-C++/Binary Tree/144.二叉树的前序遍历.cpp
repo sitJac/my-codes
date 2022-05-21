@@ -1,7 +1,7 @@
 /*
- * @lc app=leetcode.cn id=101 lang=cpp
+ * @lc app=leetcode.cn id=144 lang=cpp
  *
- * [101] 对称二叉树
+ * [144] 二叉树的前序遍历
  */
 
 // @lc code=start
@@ -18,14 +18,18 @@
  */
 class Solution {
 public:
-    bool check(TreeNode *p, TreeNode *q){
-        if(!p && !q) return true;
-        if(!p || !q) return false;
-        return p->val == q->val && check(p->left, q->right) && check(p->right, q->left);
+    void preOrder(TreeNode* root, vector<int>& ans) {
+        if(root == nullptr) {
+            return ;
+        }
+        ans.push_back(root->val);
+        preOrder(root->left, ans);
+        preOrder(root->right, ans);
     }
-
-    bool isSymmetric(TreeNode* root) {
-        return check(root, root);
+    vector<int> preorderTraversal(TreeNode* root) {
+        vector<int> ans;
+        preOrder(root, ans);
+        return ans;
     }
 };
 // @lc code=end
