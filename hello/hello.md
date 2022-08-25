@@ -1,0 +1,4 @@
+- step1：math.c, math.h, main.c
+- step2: gcc -shared -fPIC math.c -o libmath.so
+- step3: gcc main.c -lmath -L. -o main
+- step4: export LD_LIBRARY_PATH="$(pwd)"
