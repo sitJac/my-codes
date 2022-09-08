@@ -1,0 +1,6 @@
+/home/modern-cmake-by-example/7_use_libcurl/build/CMakeFiles/answer_app.dir
+/home/modern-cmake-by-example/7_use_libcurl/build/CMakeFiles/edit_cache.dir
+/home/modern-cmake-by-example/7_use_libcurl/build/CMakeFiles/rebuild_cache.dir
+/home/modern-cmake-by-example/7_use_libcurl/build/answer/CMakeFiles/libanswer.dir
+/home/modern-cmake-by-example/7_use_libcurl/build/answer/CMakeFiles/edit_cache.dir
+/home/modern-cmake-by-example/7_use_libcurl/build/answer/CMakeFiles/rebuild_cache.dir
