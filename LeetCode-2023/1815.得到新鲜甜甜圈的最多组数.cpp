@@ -56,6 +56,5 @@ private:
     static constexpr int kWidth = 5;
     static constexpr int kWidthMask = (1 << kWidth) - 1;
 };
-
 // @lc code=end
 
