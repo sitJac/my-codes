@@ -1,0 +1,11 @@
+/home/sitjac/codes/my-codes/modern-cmake-by-example/10_interface_library/build/CMakeFiles/answer_app.dir
+/home/sitjac/codes/my-codes/modern-cmake-by-example/10_interface_library/build/CMakeFiles/edit_cache.dir
+/home/sitjac/codes/my-codes/modern-cmake-by-example/10_interface_library/build/CMakeFiles/rebuild_cache.dir
+/home/sitjac/codes/my-codes/modern-cmake-by-example/10_interface_library/build/answer/CMakeFiles/edit_cache.dir
+/home/sitjac/codes/my-codes/modern-cmake-by-example/10_interface_library/build/answer/CMakeFiles/rebuild_cache.dir
+/home/sitjac/codes/my-codes/modern-cmake-by-example/10_interface_library/build/curl_wrapper/CMakeFiles/curl_wrapper.dir
+/home/sitjac/codes/my-codes/modern-cmake-by-example/10_interface_library/build/curl_wrapper/CMakeFiles/edit_cache.dir
+/home/sitjac/codes/my-codes/modern-cmake-by-example/10_interface_library/build/curl_wrapper/CMakeFiles/rebuild_cache.dir
+/home/sitjac/codes/my-codes/modern-cmake-by-example/10_interface_library/build/wolfram/CMakeFiles/wolfram.dir
+/home/sitjac/codes/my-codes/modern-cmake-by-example/10_interface_library/build/wolfram/CMakeFiles/edit_cache.dir
+/home/sitjac/codes/my-codes/modern-cmake-by-example/10_interface_library/build/wolfram/CMakeFiles/rebuild_cache.dir

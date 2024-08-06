@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/answer_app.dir/main.cpp.o -o answer_app  answer/liblibanswer.a /usr/lib/x86_64-linux-gnu/libcurl.so 

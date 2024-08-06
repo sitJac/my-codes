@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/answer_app.dir/main.cpp.o -o answer_app  wolfram/libwolfram.a curl_wrapper/libcurl_wrapper.a /usr/lib/x86_64-linux-gnu/libcurl.so 

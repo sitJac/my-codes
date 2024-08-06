@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcurl_wrapper.a CMakeFiles/curl_wrapper.dir/curl_wrapper.cpp.o
+/usr/bin/ranlib libcurl_wrapper.a

@@ -1,2 +1,0 @@
-/usr/bin/ar qc liblibanswer.a CMakeFiles/libanswer.dir/answer.cpp.o
-/usr/bin/ranlib liblibanswer.a

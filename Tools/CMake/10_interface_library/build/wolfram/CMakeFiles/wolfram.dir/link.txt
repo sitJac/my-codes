@@ -1,0 +1,2 @@
+/usr/bin/ar qc libwolfram.a CMakeFiles/wolfram.dir/alpha.cpp.o
+/usr/bin/ranlib libwolfram.a
